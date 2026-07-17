@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.shape.Circle?>
+
+<StackPane stylesheets="@login.css"
+           xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.example.project_paclibar.controller.RegisterController"
+           prefWidth="450"
+           prefHeight="750"
+           style="-fx-background-color:#f0f2f5;">
+
+    <VBox>
+        <Pane prefHeight="300"
+              styleClass="header-gradient">
+
+            <children>
+                <Circle centerX="60" centerY="60" radius="45" opacity="0.25" styleClass="bg-circle"/>
+                <Circle centerX="350" centerY="120" radius="70" opacity="0.2" styleClass="bg-circle"/>
+            </children>
+
+        </Pane>
+        <Pane prefHeight="450" style="-fx-background-color:white;"/>
+
+    </VBox>
+
+    <VBox alignment="TOP_CENTER" spacing="15" maxWidth="380" styleClass="login-card">
+
+        <StackPane.margin>
+            <Insets top="150"/>
+        </StackPane.margin>
+
+        <padding>
+            <Insets top="35" right="30" bottom="30" left="30"/>
+        </padding>
+
+        <Label text="Create Account" styleClass="card-title"/>
+        <Label text="Join your E-Wallet today" styleClass="card-subtitle"/>
+        <TextField fx:id="usernameField" promptText="Username" styleClass="modern-field"/>
+        <PasswordField fx:id="passwordField" promptText="Password" styleClass="modern-field"/>
+        <TextField fx:id="nameField" promptText="Full Name" styleClass="modern-field"/>
+        <TextField fx:id="emailField" promptText="Email Address" styleClass="modern-field"/>
+        <TextField fx:id="phoneField" promptText="Phone Number" styleClass="modern-field"/>
+        <TextField fx:id="addressField" promptText="Address" styleClass="modern-field"/>
+
+        <Button text="CREATE ACCOUNT" onAction="#handleRegister" maxWidth="Infinity" styleClass="gradient-button">
+
+            <VBox.margin>
+                <Insets top="15"/>
+            </VBox.margin>
+        </Button>
+
+        <Label fx:id="statusLabel" wrapText="true" style="-fx-font-size:13px;"/>
+    </VBox>
+
+</StackPane>

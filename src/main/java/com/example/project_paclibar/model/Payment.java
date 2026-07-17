@@ -5,5 +5,4 @@ public class Payment {
     private String merchantName;
     private double amount;
 
-    // Methods: payBills(), payMerchant()
 }

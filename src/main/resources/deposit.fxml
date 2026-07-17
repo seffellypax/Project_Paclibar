@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox alignment="TOP_CENTER" spacing="25.0"
+      style="-fx-background-color: #f8f9fa;"
+      stylesheets="@login.css"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.project_paclibar.controller.DepositController">
+    <padding>
+        <Insets top="40" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <HBox alignment="CENTER_LEFT">
+
+        <Button text="&lt;"
+                onAction="#handleBack"
+                style="-fx-background-color: transparent;
+                       -fx-font-size: 20px;"/>
+
+        <Label text="Deposit Money" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-padding: 0 0 0 20;"/>
+
+    </HBox>
+    <Label fx:id="balanceDisplayLabel" text="Available Balance: PHP 0.00" style="-fx-font-size: 14px;-fx-text-fill: #b71c44;-fx-font-weight: bold;"/>
+
+    <VBox alignment="CENTER" spacing="15" style="-fx-background-color: white;-fx-background-radius: 20;-fx-padding: 25; -fx-effect: dropshadow(three-pass-box,rgba(0,0,0,0.05),10,0,0,5);">
+
+        <Label text="Deposit Method" style="-fx-text-fill: #777;"/>
+
+        <ComboBox fx:id="depositMethodComboBox" promptText="Select method" maxWidth="Infinity"/>
+
+        <Label text="How much to deposit?" style="-fx-text-fill: #777;"/>
+
+        <TextField fx:id="depositAmountField" promptText="0.00" alignment="CENTER" style="-fx-font-size: 24px;-fx-background-color: transparent;"/>
+
+        <Label text="PHP"
+               style="-fx-text-fill: #b71c44;
+                      -fx-font-weight: bold;"/>
+
+        <Label text="Reference Number"
+               style="-fx-text-fill: #777;"/>
+
+        <TextField fx:id="referenceNumberField"
+                   promptText="Enter reference number"/>
+
+        <Label text="Note (Optional)"
+               style="-fx-text-fill: #777;"/>
+        <TextArea fx:id="notesField"
+                  promptText="Add a note..."
+                  prefRowCount="2"/>
+    </VBox>
+    <Label fx:id="statusLabel"/>
+    <Button text="Confirm Deposit"
+            onAction="#handleDeposit"
+            maxWidth="Infinity"
+            styleClass="gradient-button"/>
+
+
+</VBox>

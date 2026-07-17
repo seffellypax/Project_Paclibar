@@ -7,5 +7,5 @@ public class Notification {
     private String message;
     private Date dateSent;
 
-    public void sendNotification() { /* Logic for UI alert */ }
+    public void sendNotification(){}
 }

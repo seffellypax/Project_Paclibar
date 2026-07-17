@@ -82,3 +82,30 @@
 .gradient-button:pressed {
     -fx-translate-y: 1;
 }
+
+.balance-card {
+    -fx-background-color: linear-gradient(to bottom right, #4a0e25, #b71c44);
+    -fx-background-radius: 20;
+    -fx-padding: 30;
+    -fx-effect: dropshadow(three-pass-box, rgba(183, 28, 68, 0.4), 15, 0, 0, 5);
+}
+
+.action-button {
+    -fx-background-color: white;
+    -fx-background-radius: 15;
+    -fx-text-fill: #4a0e25;
+    -fx-font-weight: bold;
+    -fx-padding: 15 25;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);
+}
+.modern-field {
+    -fx-background-color: white;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 12;
+}
+
+.modern-field:focused {
+    -fx-border-color: #b71c44;
+}

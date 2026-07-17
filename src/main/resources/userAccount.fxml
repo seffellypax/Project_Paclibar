@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox alignment="TOP_CENTER"
+      spacing="20"
+      style="-fx-background-color: #f8f9fa;"
+      stylesheets="@login.css"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.project_paclibar.controller.UserAccountController">
+    <padding>
+        <Insets top="40" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <HBox alignment="CENTER_LEFT">
+        <Button text="&lt;"
+                onAction="#handleBack"
+                style="-fx-background-color: transparent;
+                       -fx-font-size:20px;"/>
+        <Label text="My Account" style="-fx-font-size:22px;-fx-font-weight:bold;-fx-padding:0 0 0 20;"/>
+    </HBox>
+
+    <VBox alignment="CENTER"
+          spacing="10">
+        <Label text="👤" style="-fx-font-size:50px;"/>
+        <Label fx:id="nameLabel" text="Juan Dela Cruz" style="-fx-font-size:18px;-fx-font-weight:bold;"/>
+        <Label text="Verified Account" style="-fx-text-fill:#b71c44;-fx-font-weight:bold;"/>
+    </VBox>
+
+    <VBox spacing="15"
+          style="-fx-background-color:white;-fx-background-radius:20;-fx-padding:25;-fx-effect:dropshadow(three-pass-box,rgba(0,0,0,0.05),10,0,0,5);">
+        <Label text="Personal Information" style="-fx-font-size:16px;-fx-font-weight:bold;"/>
+        <Label fx:id="emailLabel" text="Email: example@gmail.com"/>
+        <Label fx:id="phoneLabel" text="Phone: 09123456789"/>
+        <Label fx:id="addressLabel" text="Address: Quezon City"/>
+    </VBox>
+
+    <VBox spacing="15"
+          style="-fx-background-color:white;-fx-background-radius:20;-fx-padding:25;">
+        <Label text="Wallet Information" style="-fx-font-size:16px; -fx-font-weight:bold;"/>
+        <Label fx:id="accountNumberLabel" text="Account Number: 000123456"/>
+        <Label fx:id="walletIdLabel" text="Wallet ID: WLT-0001"/>
+        <Label fx:id="statusLabel" text="Status: Active"/>
+    </VBox>
+
+    <Button text="Edit Profile" maxWidth="Infinity" styleClass="gradient-button"/>
+    <Button text="Logout" maxWidth="Infinity"/>
+</VBox>

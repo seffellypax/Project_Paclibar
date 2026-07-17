@@ -5,6 +5,6 @@ public class Bank {
     private int bankID;
     private String bankName;
 
-    public void cashIn() { /* Logic for external bank integration */ }
-    public void cashOut() { /* Logic for external bank withdrawal */ }
+    public void cashIn(){}
+    public void cashOut(){}
 }

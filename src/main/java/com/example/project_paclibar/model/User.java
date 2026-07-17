@@ -1,26 +1,67 @@
 package com.example.project_paclibar.model;
 
 public class User {
-    private int userID;
-    private String fullName;
-    private String email;
-    private String phoneNo;
+
+    private int userId;
+    private String username;
     private String password;
+    private String name;
+    private String email;
+    private String phone;
+    private String address;
+    private String role;
 
-    // Composition: User owns one Wallet
-    private Wallet wallet;
 
-    public User(int userID, String fullName, String email, String phoneNo, String password) {
-        this.userID = userID;
-        this.fullName = fullName;
-        this.email = email;
-        this.phoneNo = phoneNo;
+    public User(int userId,
+                String username,
+                String password,
+                String name,
+                String email,
+                String phone,
+                String address,
+                String role) {
+
+        this.userId = userId;
+        this.username = username;
         this.password = password;
-        // Initialize the wallet when the user is created
-        this.wallet = new Wallet();
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+        this.address = address;
+        this.role = role;
     }
 
-    // Getters and Setters
-    public Wallet getWallet() { return wallet; }
-    public void setWallet(Wallet wallet) { this.wallet = wallet; }
+    public int getUserId() {
+        return userId;
+    }
+
+
+    public String getUsername() {
+        return username;
+    }
+
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getRole() {
+        return role;
+    }
 }

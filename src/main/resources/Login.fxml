@@ -30,7 +30,7 @@
             <Label text="Sign in to your E-Wallet" styleClass="card-subtitle" />
 
             <VBox spacing="5.0">
-                <Label text="Email" styleClass="field-label" />
+                <Label text="Username" styleClass="field-label" />
                 <TextField fx:id="emailField" promptText="your.email@example.com" styleClass="modern-field" />
                 <VBox.margin>
                     <Insets top="30.0" />
@@ -62,7 +62,7 @@
                     <Insets top="20.0" />
                 </VBox.margin>
                 <Label text="Don't have account?" styleClass="signup-prompt" />
-                <Hyperlink text="Sign up" styleClass="signup-link" />
+                <Hyperlink text="Sign up" onAction="#handleRegister" styleClass="signup-link" />
             </HBox>
         </children>
     </VBox>
