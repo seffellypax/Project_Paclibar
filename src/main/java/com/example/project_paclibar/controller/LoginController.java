@@ -1,9 +1,11 @@
 package com.example.project_paclibar.controller;
 
+import com.example.project_paclibar.database.IUserDAO;
 import com.example.project_paclibar.database.UserDAO;
 import com.example.project_paclibar.database.WalletDAO;
 import com.example.project_paclibar.model.User;
 import com.example.project_paclibar.model.Wallet;
+import com.example.project_paclibar.util.SessionManager; // 1. IMPORT THIS
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,42 +17,29 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class LoginController {
-    @FXML private TextField emailField; // used as username field
+    @FXML private TextField emailField;
     @FXML private PasswordField passwordField;
     @FXML private Label errorLabel;
 
-
-    private final UserDAO userDAO = new UserDAO();
+    private final IUserDAO userDAO = new UserDAO();
     private final WalletDAO walletDAO = new WalletDAO();
 
     @FXML
     public void handleLogin() {
-        String username =
-                emailField.getText();
-        String password =
-                passwordField.getText();
+        String username = emailField.getText();
+        String password = passwordField.getText();
 
-        User user =
-                userDAO.login(
-                        username,
-                        password
-                );
+        User user = userDAO.login(username, password);
+
         if(user != null) {
-            Wallet wallet =
-                    walletDAO.getWalletByUserId(
-                            user.getUserId()
-                    );
-            navigateToDashboard(
-                    user,
-                    wallet
-            );
+            // 2. MANAGE SESSION: Save to session.dat
+            SessionManager.saveSession(user);
+
+            Wallet wallet = walletDAO.getWalletByUserId(user.getUserId());
+            navigateToDashboard(user, wallet);
         } else {
-            errorLabel.setText(
-                    "Invalid username or password."
-            );
-            errorLabel.setStyle(
-                    "-fx-text-fill: red;"
-            );
+            errorLabel.setText("Invalid username or password.");
+            errorLabel.setStyle("-fx-text-fill: red;");
         }
     }
     private void navigateToDashboard(User user, Wallet wallet) {

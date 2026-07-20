@@ -9,6 +9,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+
 public class UserAccountController {
     @FXML private Label nameLabel;
     @FXML private Label emailLabel;
@@ -78,6 +80,24 @@ public class UserAccountController {
         } catch (Exception e) {
             e.printStackTrace();
 
+        }
+    }
+    @FXML
+    public void handleLogout() {
+
+        com.example.project_paclibar.util.SessionManager.deleteSession();
+
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/login.fxml"));
+            Parent root = loader.load();
+
+            Stage stage = (Stage) nameLabel.getScene().getWindow();
+
+            stage.setScene(new Scene(root, 450, 750));
+            stage.setTitle("Login");
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

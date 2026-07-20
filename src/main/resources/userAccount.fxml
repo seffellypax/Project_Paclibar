@@ -47,5 +47,7 @@
     </VBox>
 
     <Button text="Edit Profile" maxWidth="Infinity" styleClass="gradient-button"/>
-    <Button text="Logout" maxWidth="Infinity"/>
+    <Button text="Logout"
+            onAction="#handleLogout"
+            styleClass="logout-button" />
 </VBox>

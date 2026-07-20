@@ -114,6 +114,7 @@ public class DashboardController {
         );
     }
 
+
     public User getCurrentUser() {
         return currentUser;
     }
