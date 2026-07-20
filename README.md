@@ -1,4 +1,4 @@
-FINAL PROJECT
+FINAL PROJECT  
 By: July Seffelly P. Paclibar
 
 This is a JavaFX-based E-Wallet application designed to manage user finances securely with persistent session management.
