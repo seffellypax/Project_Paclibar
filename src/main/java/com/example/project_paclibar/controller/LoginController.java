@@ -5,7 +5,7 @@ import com.example.project_paclibar.database.UserDAO;
 import com.example.project_paclibar.database.WalletDAO;
 import com.example.project_paclibar.model.User;
 import com.example.project_paclibar.model.Wallet;
-import com.example.project_paclibar.util.SessionManager; // 1. IMPORT THIS
+import com.example.project_paclibar.util.SessionManager;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -32,7 +32,6 @@ public class LoginController {
         User user = userDAO.login(username, password);
 
         if(user != null) {
-            // 2. MANAGE SESSION: Save to session.dat
             SessionManager.saveSession(user);
 
             Wallet wallet = walletDAO.getWalletByUserId(user.getUserId());
@@ -72,18 +71,14 @@ public class LoginController {
             e.printStackTrace();
         }
     }
-
     @FXML
     public void handleRegister() {
-
-
         try {
             FXMLLoader loader =
                     new FXMLLoader(
                             getClass()
                                     .getResource("/register.fxml")
                     );
-
             Parent root =
                     loader.load();
             Stage stage =

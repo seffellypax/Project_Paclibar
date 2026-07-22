@@ -1,6 +1,6 @@
 package com.example.project_paclibar.model;
 
-import java.io.Serializable; // Import this
+import java.io.Serializable;
 
 public class User implements Serializable {
 
@@ -15,16 +15,7 @@ public class User implements Serializable {
     private String address;
     private String role;
 
-
-    public User(int userId,
-                String username,
-                String password,
-                String name,
-                String email,
-                String phone,
-                String address,
-                String role) {
-
+    public User(int userId, String username, String password, String name, String email, String phone, String address, String role) {
         this.userId = userId;
         this.username = username;
         this.password = password;
@@ -34,37 +25,30 @@ public class User implements Serializable {
         this.address = address;
         this.role = role;
     }
-
     public int getUserId() {
         return userId;
     }
-
-
     public String getUsername() {
+
         return username;
     }
-
-
     public String getPassword() {
+
         return password;
     }
-
     public String getName() {
         return name;
     }
-
     public String getEmail() {
+
         return email;
     }
-
     public String getPhone() {
         return phone;
     }
-
     public String getAddress() {
         return address;
     }
-
     public String getRole() {
         return role;
     }

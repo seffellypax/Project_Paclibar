@@ -36,7 +36,34 @@ public class UserDAO implements IUserDAO{
         }
         return user;
     }
+    public User getUserByUsername(String username) {
+        User user = null;
+        String sql = "SELECT * FROM users WHERE username = ?";
 
+        try (Connection con = DatabaseConnection.getConnection();
+             PreparedStatement ps = con.prepareStatement(sql)) {
+
+            ps.setString(1, username);
+
+            try (ResultSet rs = ps.executeQuery()) {
+                if(rs.next()) {
+                    user = new User(
+                            rs.getInt("user_id"),
+                            rs.getString("username"),
+                            rs.getString("password"),
+                            rs.getString("full_name"),
+                            rs.getString("email"),
+                            rs.getString("phone"),
+                            rs.getString("address"),
+                            rs.getString("role")
+                    );
+                }
+            }
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+        return user;
+    }
     public boolean register(User user) {
         String sql = "INSERT INTO users (username, password, full_name, email, phone, address, role) VALUES (?,?,?,?,?,?,?)";
 

@@ -123,3 +123,30 @@
 .logout-button:hover {
     -fx-background-color: #e63939;
 }
+
+.custom-alert {
+    -fx-background-color: #ffffff;
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+.custom-alert .header-panel {
+    -fx-background-color: #f8f9fa;
+}
+
+.custom-alert .content {
+    -fx-font-size: 14px;
+    -fx-text-fill: #333333;
+}
+
+.custom-alert .dialog-pane .button {
+    -fx-background-color: linear-gradient(to right, #4a0e25, #b71c44);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20px;
+    -fx-padding: 8 20 8 20;
+    -fx-cursor: hand;
+}
+
+.custom-alert .dialog-pane .button:hover {
+    -fx-opacity: 0.9;
+}

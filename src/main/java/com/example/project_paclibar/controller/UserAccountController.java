@@ -33,11 +33,9 @@ public class UserAccountController {
         emailLabel.setText(
                 "Email: " + user.getEmail()
         );
-
         phoneLabel.setText(
                 "Phone: " + user.getPhone()
         );
-
         addressLabel.setText(
                 "Address: " + user.getAddress()
         );

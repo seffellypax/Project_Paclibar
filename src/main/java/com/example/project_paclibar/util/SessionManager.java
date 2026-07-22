@@ -4,7 +4,6 @@ import com.example.project_paclibar.model.User;
 import java.io.*;
 
 public class SessionManager {
-    // Force the file to be created in the application's root directory
     private static final String SESSION_FILE = System.getProperty("user.dir") + File.separator + "session.dat";
 
     public static void saveSession(User user) {

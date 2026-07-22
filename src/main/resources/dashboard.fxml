@@ -27,12 +27,11 @@
                    style="-fx-text-fill: white; -fx-font-size: 32px; -fx-font-weight: bold;"/>
         </VBox>
 
-        <GridPane hgap="15" vgap="15" alignment="CENTER">
-            <Button text="Transfer" onAction="#handleSendMoney" styleClass="action-button" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
-            <Button text="QR Pay" styleClass="action-button" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
-            <Button text="Deposit" onAction="#handleDeposit" styleClass="action-button" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-            <Button text="My Account" onAction="#handleAccount" styleClass="action-button" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
-        </GridPane>
+        <HBox spacing="15" alignment="CENTER">
+            <Button text="Transfer" onAction="#handleSendMoney" styleClass="action-button" prefWidth="200"/>
+            <Button text="Deposit" onAction="#handleDeposit" styleClass="action-button" prefWidth="200"/>
+            <Button text="My Account" onAction="#handleAccount" styleClass="action-button" prefWidth="200"/>
+        </HBox>
 
         <Label text="Transactions"
                style="-fx-font-size:18px; -fx-font-weight:bold; -fx-padding:10 0 0 0;"/>
@@ -40,6 +39,11 @@
         <TableView fx:id="transactionTable"
                    VBox.vgrow="ALWAYS"
                    style="-fx-background-radius:15;">
+            <columns>
+                <TableColumn fx:id="colType" text="Type" prefWidth="90"/>
+                <TableColumn fx:id="colAmount" text="Amount (PHP)" prefWidth="100"/>
+                <TableColumn fx:id="colDescription" text="Description" prefWidth="200"/>
+            </columns>
         </TableView>
     </VBox>
 </StackPane>
